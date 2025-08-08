@@ -9,6 +9,7 @@ class FreelanceMarketTextField extends StatelessWidget {
   final String hintText;
   final FormFieldValidator<String>? validator;
   // final IconData? prefixIcon;
+  final IconData? suffixIcon;
   final bool obscureText;
   final TextInputType keyboardType;
   final int maxLines;
@@ -19,6 +20,7 @@ class FreelanceMarketTextField extends StatelessWidget {
     required this.hintText,
     this.validator,
     // this.prefixIcon,
+    this.suffixIcon,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
     this.maxLines = 1,
@@ -42,6 +44,9 @@ class FreelanceMarketTextField extends StatelessWidget {
         // prefixIcon: prefixIcon != null
         //     ? Icon(prefixIcon, color: kTextSecondaryColor, size: 24.w)
         //     : null,
+        suffixIcon: suffixIcon != null
+            ? Icon(suffixIcon, color: kTextSecondaryColor)
+            : null,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: const BorderSide(color: kTextSecondaryColor),

@@ -8,7 +8,8 @@ class FreelanceMarketButton extends StatelessWidget {
   final String label;
   final VoidCallback onPressed;
   final double height;
-  final double width;
+  // final double width;
+  final double? width;
   final double fontSize;
   final Color backgroundColor;
   final Color textColor;
@@ -36,7 +37,8 @@ class FreelanceMarketButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height.h,
-      width: width.w,
+      // width: width.w,
+      width: width?.w,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
