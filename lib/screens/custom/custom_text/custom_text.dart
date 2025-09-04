@@ -9,10 +9,11 @@ class FreelanceMarketText extends StatelessWidget {
   final FontWeight fontWeight;
   final Color color;
   final TextAlign textAlign;
-  final int maxLines;
-  final TextOverflow overflow;
+  final int ?maxLines;
+  final TextOverflow ? overflow;
   final bool isUnderline;
   final bool isItalic;
+  final double? lineHeight;
 
   const FreelanceMarketText(
     this.text, {
@@ -21,10 +22,11 @@ class FreelanceMarketText extends StatelessWidget {
     this.fontWeight = FontWeight.normal,
     this.color = kTextPrimaryColor,
     this.textAlign = TextAlign.start,
-    this.maxLines = 1,
-    this.overflow = TextOverflow.ellipsis,
+    this.maxLines,
+    this.overflow,
     this.isUnderline = false,
     this.isItalic = false,
+        this.lineHeight,
   });
 
   @override
@@ -37,6 +39,7 @@ class FreelanceMarketText extends StatelessWidget {
       style: GoogleFonts.inter(
         fontSize: fontSize.sp,
         fontWeight: fontWeight,
+        height: lineHeight,
         color: color,
         fontStyle: isItalic ? FontStyle.italic : FontStyle.normal,
         decoration: isUnderline
