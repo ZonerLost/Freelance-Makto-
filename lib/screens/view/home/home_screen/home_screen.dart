@@ -3,8 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_market/generated/assets.dart';
 import 'package:freelance_market/screens/custom/common_image_widget/common_image_widget.dart';
 import 'package:freelance_market/screens/custom/custom_text/custom_text.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../config/constant/colors.dart';
+import '../../../../config/routes/routes_names.dart';
 import '../../../custom/custom_app_bar/custom_app_bar.dart';
 import '../../../custom/custom_text_from_field/custom_text_from_field.dart';
 import 'bottom_sheets/home_bottom_sheets.dart';
@@ -45,8 +48,13 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Spacer(),
-          CommonImageView(
-            svgPath: Assets.svgNotification,
+          GestureDetector(
+            onTap: (){
+              Get.toNamed(RouteName.notificationScreen);
+            },
+            child: CommonImageView(
+              svgPath: Assets.svgNotification,
+            ),
           ),
           20.horizontalSpace,
         ],
@@ -117,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: GestureDetector(
                     onTap: (){
-                      HomeBottomSheet.successBottomSheet();
+                      HomeBottomSheet.rateClientBottomSheet();
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
@@ -191,86 +199,91 @@ class HomeScreen extends StatelessWidget {
              itemBuilder: (context, index) {
              return  Padding(
                padding: const EdgeInsets.only(bottom: 8.0),
-               child: Container(
-                 width: double.infinity,
-                 padding: const EdgeInsets.all(10),
-                 decoration: ShapeDecoration(
-                   color: kCBGColor,
-                   shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(10),
+               child: GestureDetector(
+                 onTap: (){
+                   Get.toNamed(RouteName.jobDetailsScreen);
+                 },
+                 child: Container(
+                   width: double.infinity,
+                   padding: const EdgeInsets.all(10),
+                   decoration: ShapeDecoration(
+                     color: kCBGColor,
+                     shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(10),
+                     ),
                    ),
-                 ),
-                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     FreelanceMarketText(
-                       "Videographer",
-                       fontSize: 14,
-                       fontWeight: FontWeight.w700,
-                     ),
-                     5.verticalSpace,
-                     Row(
-                       children: [
-                         FreelanceMarketText(
-                           "Mid-Level",
-                           fontSize: 12,
-                           fontWeight: FontWeight.w400,
-                           color: kTextSecondary2Color,
-                         ),
-                         Padding(
-                           padding: const EdgeInsets.symmetric(horizontal: 5),
-                           child: Container(
-                             height: 4,
-                             width: 4,
-                             decoration: BoxDecoration(
-                                 color: kTextSecondary2Color,
-                                 shape: BoxShape.circle
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       FreelanceMarketText(
+                         "Videographer",
+                         fontSize: 14,
+                         fontWeight: FontWeight.w700,
+                       ),
+                       5.verticalSpace,
+                       Row(
+                         children: [
+                           FreelanceMarketText(
+                             "Mid-Level",
+                             fontSize: 12,
+                             fontWeight: FontWeight.w400,
+                             color: kTextSecondary2Color,
+                           ),
+                           Padding(
+                             padding: const EdgeInsets.symmetric(horizontal: 5),
+                             child: Container(
+                               height: 4,
+                               width: 4,
+                               decoration: BoxDecoration(
+                                   color: kTextSecondary2Color,
+                                   shape: BoxShape.circle
+                               ),
                              ),
                            ),
-                         ),
-                         FreelanceMarketText(
-                           "Full-Time",
-                           fontSize: 12,
-                           fontWeight: FontWeight.w400,
-                           color: kTextSecondary2Color,
-                         ),
-                         Padding(
-                           padding: const EdgeInsets.symmetric(horizontal: 5),
-                           child: Container(
-                             height: 4,
-                             width: 4,
-                             decoration: BoxDecoration(
-                                 color: kTextSecondary2Color,
-                                 shape: BoxShape.circle
+                           FreelanceMarketText(
+                             "Full-Time",
+                             fontSize: 12,
+                             fontWeight: FontWeight.w400,
+                             color: kTextSecondary2Color,
+                           ),
+                           Padding(
+                             padding: const EdgeInsets.symmetric(horizontal: 5),
+                             child: Container(
+                               height: 4,
+                               width: 4,
+                               decoration: BoxDecoration(
+                                   color: kTextSecondary2Color,
+                                   shape: BoxShape.circle
+                               ),
                              ),
                            ),
-                         ),
-                         FreelanceMarketText(
-                           "Onsite",
-                           fontSize: 12,
-                           fontWeight: FontWeight.w400,
-                           color: kTextSecondary2Color,
-                         ),
-                       ],
-                     ),
-                     10.verticalSpace,
-                     Row(
-                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                       children: [
-                         FreelanceMarketText(
-                           "Starting from \$10",
-                           fontSize: 12,
-                           fontWeight: FontWeight.w700,
-                         ),
-                         FreelanceMarketText(
-                           "Edited on 20 July",
-                           fontSize: 11,
-                           fontWeight: FontWeight.w400,
-                           color: kTextSecondary2Color,
-                         ),
-                       ],
-                     )
-                   ],
+                           FreelanceMarketText(
+                             "Onsite",
+                             fontSize: 12,
+                             fontWeight: FontWeight.w400,
+                             color: kTextSecondary2Color,
+                           ),
+                         ],
+                       ),
+                       10.verticalSpace,
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         children: [
+                           FreelanceMarketText(
+                             "Starting from \$10",
+                             fontSize: 12,
+                             fontWeight: FontWeight.w700,
+                           ),
+                           FreelanceMarketText(
+                             "Edited on 20 July",
+                             fontSize: 11,
+                             fontWeight: FontWeight.w400,
+                             color: kTextSecondary2Color,
+                           ),
+                         ],
+                       )
+                     ],
+                   ),
                  ),
                ),
              );

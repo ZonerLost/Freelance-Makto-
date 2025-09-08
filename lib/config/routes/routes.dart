@@ -8,12 +8,18 @@ import '../../screens/view/Inbox/schedule_meeting_screen.dart';
 import '../../screens/view/auth/creat_account_screen/create_account_screen.dart';
 import '../../screens/view/auth/login_screen/login_screen.dart';
 import '../../screens/view/contact_details_screen/contact_details_screen.dart';
+import '../../screens/view/customer/customer_categories/customer_categories_details_screen.dart';
+import '../../screens/view/customer/customer_categories/customer_categories_screen.dart';
+import '../../screens/view/customer/customer_home/customer_home_screen.dart';
+import '../../screens/view/customer/service_provider_details/service_provider_details_screen.dart';
 import '../../screens/view/educational_background_screens/educational_background_screen/educational_background_screen.dart';
+import '../../screens/view/freelance_bottom_nav_bar/freelance_bottom_nav_bar.dart';
 import '../../screens/view/home/home_screen/home_screen.dart';
 import '../../screens/view/home/job_details_screen/job_details_screen.dart';
 import '../../screens/view/job/job_screen.dart';
 import '../../screens/view/preferred_service_type_screen/preferred_service_type_screen.dart';
 import '../../screens/view/profile/account_setting/account_setting_screen.dart';
+import '../../screens/view/profile/edit_profile/edit_profile_screen.dart';
 import '../../screens/view/profile/faqs/faqs_screen.dart';
 import '../../screens/view/profile/favourite/favourite_screen.dart';
 import '../../screens/view/profile/job_seeker_profile/job_seeker_profile_screen.dart';
@@ -30,7 +36,7 @@ import '../../screens/splash_service/splash_screen.dart';
 
 class AppRoutes {
   static appRoutes() => [
-    GetPage(name: RouteName.splashScreen, page: () => JobSeekerProfileScreen()),
+    GetPage(name: RouteName.splashScreen, page: () => ServiceProviderDetailsScreen()),
 
     ///
     /// Auth
@@ -82,11 +88,8 @@ class AppRoutes {
       page: () => const AvailabilityScreen(),
     ),
 
-    GetPage(
-      name: RouteName.homeScreen,
-      page: () => const HomeScreen(),
-    ),
-
+    GetPage(name: RouteName.freelanceBottomNavBar, page: () => const FreelanceBottomNavBar()),
+    GetPage(name: RouteName.homeScreen, page: () => const HomeScreen()),
 
     GetPage(
       name: RouteName.jobDetailsScreen,
@@ -98,70 +101,57 @@ class AppRoutes {
       page: () => const NotificationScreen(),
     ),
 
-    GetPage(
-      name: RouteName.jobScreen,
-      page: () => const JobScreen(),
-    ),
+    GetPage(name: RouteName.jobScreen, page: () => const JobScreen()),
 
     GetPage(
       name: RouteName.subscriptionScreen,
-      page: () =>  SubscriptionScreen(),
+      page: () => SubscriptionScreen(),
     ),
 
-    GetPage(
-      name: RouteName.inboxScreen,
-      page: () =>  InboxScreen(),
-    ),
+    GetPage(name: RouteName.inboxScreen, page: () => InboxScreen()),
 
+    GetPage(name: RouteName.chatUiScreen, page: () => ChatUiScreen()),
 
     GetPage(
       name: RouteName.scheduleMeetingScreen,
-      page: () =>  ScheduleMeetingScreen(),
+      page: () => ScheduleMeetingScreen(),
     ),
 
     GetPage(
       name: RouteName.jobSeekerProfileScreen,
-      page: () =>  JobSeekerProfileScreen(),
+      page: () => JobSeekerProfileScreen(),
     ),
 
-    GetPage(
-      name: RouteName.favouriteScreen,
-      page: () =>  FavouriteScreen(),
-    ),
+    GetPage(name: RouteName.favouriteScreen, page: () => FavouriteScreen()),
 
-
-    GetPage(
-      name: RouteName.languageScreen,
-      page: () =>  LanguageScreen(),
-    ),
+    GetPage(name: RouteName.languageScreen, page: () => LanguageScreen()),
 
     GetPage(
       name: RouteName.privacyPolicyScreen,
-      page: () =>  PrivacyPolicyScreen(),
+      page: () => PrivacyPolicyScreen(),
     ),
 
     GetPage(
       name: RouteName.termAndConditionScreen,
-      page: () =>  TermAndConditionScreen(),
+      page: () => TermAndConditionScreen(),
     ),
 
+    GetPage(name: RouteName.faqsScreen, page: () => FaqsScreen()),
 
-    GetPage(
-      name: RouteName.faqsScreen,
-      page: () =>  FaqsScreen(),
-    ),
-
-    GetPage(
-      name: RouteName.settingScreen,
-      page: () =>  SettingScreen(),
-    ),
+    GetPage(name: RouteName.settingScreen, page: () => SettingScreen()),
 
     GetPage(
       name: RouteName.accountSettingScreen,
-      page: () =>  AccountSettingScreen(),
+      page: () => AccountSettingScreen(),
     ),
 
+    GetPage(name: RouteName.editProfileScreen, page: () => EditProfileScreen()),
 
+    /// Customer Routes...
 
+    GetPage(name: RouteName.customerHomeScreen, page: () => CustomerHomeScreen()),
+    GetPage(name: RouteName.customerCategoriesScreen, page: () => CustomerCategoriesScreen()),
+    GetPage(name: RouteName.customerCategoriesDetailsScreen, page: () => CustomerCategoriesDetailsScreen()),
+    GetPage(name: RouteName.serviceProviderDetailsScreen, page: () => ServiceProviderDetailsScreen()),
   ];
 }

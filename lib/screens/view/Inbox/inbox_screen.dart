@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../config/constant/colors.dart';
+import '../../../config/routes/routes_names.dart';
 import '../../../generated/assets.dart';
 import '../../custom/common_image_widget/common_image_widget.dart';
 import '../../custom/custom_app_bar/custom_app_bar.dart';
@@ -26,8 +29,13 @@ class InboxScreen extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
           Spacer(),
-          CommonImageView(
-            svgPath: Assets.svgNotification,
+          GestureDetector(
+            onTap: (){
+              Get.toNamed(RouteName.notificationScreen);
+            },
+            child: CommonImageView(
+              svgPath: Assets.svgNotification,
+            ),
           ),
           20.horizontalSpace,
         ],
@@ -64,77 +72,82 @@ class InboxScreen extends StatelessWidget {
                 itemCount: 12,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Row(
-                      children: [
-                        CommonImageView(
-                          imagePath: Assets.imagesProfile,
-                          height: 40,
-                          radius: 50,
-                        ),
-                        12.horizontalSpace,
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  FreelanceMarketText(
-                                    "Robin Karleys",
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                  FreelanceMarketText(
-                                    "12:13 Pm",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                  )
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  FreelanceMarketText(
-                                    "typing...",
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: kTextSecondary2Color,
-                                  ),
-                                  if(index <= 1)
-                                  Container(
-                                    width: 20,
-                                    height: 20,
-                                    padding: const EdgeInsets.all(2.95),
-                                    decoration: ShapeDecoration(
-                                      color: kPrimaryColor,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(147.47),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: FreelanceMarketText(
-                                        "7",
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: kWhiteColor,
-                                      ),
-                                    ),
-                                  ),
-                                  if(index >= 2)
-                                    CommonImageView(
-                                      svgPath: Assets.svgSendReceiver,
-                                    )
-                                ],
-                              ),
-                            ],
+                return GestureDetector(
+                  onTap: (){
+                    Get.toNamed(RouteName.chatUiScreen);
+                  },
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          CommonImageView(
+                            imagePath: Assets.imagesProfile,
+                            height: 40,
+                            radius: 50,
                           ),
-                        ),
-                      ],
-                    ),
-                    12.verticalSpace,
-                    Divider(color: kBackgroundColor,)
-                  ],
+                          12.horizontalSpace,
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    FreelanceMarketText(
+                                      "Robin Karleys",
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                    FreelanceMarketText(
+                                      "12:13 Pm",
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    FreelanceMarketText(
+                                      "typing...",
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: kTextSecondary2Color,
+                                    ),
+                                    if(index <= 1)
+                                    Container(
+                                      width: 20,
+                                      height: 20,
+                                      padding: const EdgeInsets.all(2.95),
+                                      decoration: ShapeDecoration(
+                                        color: kPrimaryColor,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(147.47),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: FreelanceMarketText(
+                                          "7",
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500,
+                                          color: kWhiteColor,
+                                        ),
+                                      ),
+                                    ),
+                                    if(index >= 2)
+                                      CommonImageView(
+                                        svgPath: Assets.svgSendReceiver,
+                                      )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      12.verticalSpace,
+                      Divider(color: kBackgroundColor,)
+                    ],
+                  ),
                 );
               },),
             ),

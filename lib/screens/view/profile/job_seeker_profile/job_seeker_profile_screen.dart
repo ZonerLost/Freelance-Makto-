@@ -24,160 +24,162 @@ class JobSeekerProfileScreen extends StatelessWidget {
     );
   }
   _body(){
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-      child: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(30),
-              decoration: ShapeDecoration(
-                color: kWhiteColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(30),
+                decoration: ShapeDecoration(
+                  color: kWhiteColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  shadows: [
+                    BoxShadow(
+                      color: Color(0x07000000),
+                      blurRadius: 14,
+                      offset: Offset(2, 2),
+                      spreadRadius: 0,
+                    )
+                  ],
                 ),
-                shadows: [
-                  BoxShadow(
-                    color: Color(0x07000000),
-                    blurRadius: 14,
-                    offset: Offset(2, 2),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Column(
-                children: [
-                  CommonImageView(
-                    imagePath: Assets.imagesProfile,
-                    height: 65,
-                    radius: 50,
-                  ),
-                  16.verticalSpace,
-                  FreelanceMarketText(
-                    "Kevin Thomas",
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  5.verticalSpace,
-                  FreelanceMarketText(
-                    "kevin.thomas2@gmail.com",
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: kTextSecondary2Color,
-                  )
-                ],
-              ),
-            ),
-            16.verticalSpace,
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(12),
-              decoration: ShapeDecoration(
-                color: kWhiteColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                shadows: [
-                  BoxShadow(
-                    color: Color(0x07000000),
-                    blurRadius: 14,
-                    offset: Offset(2, 2),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Column(
-                children: [
-                  settingsRow(
-                    text: "Account Settings",
-                    imagePath: Assets.imagesP1,
-                    onTap: () {
-                     Get.toNamed(RouteName.accountSettingScreen);
-                    },
-                  ),
-                  settingsRow(
-                    text: "Edit Profile",
-                    imagePath: Assets.imagesP1,
-                    onTap: () {
-                     // Get.to(RouteName.Ed);
-                    },
-                  ),
-                  settingsRow(
-                    text: "Favorites",
-                    imagePath: Assets.imagesFavourite ,
-                    onTap: () {
-                      Get.toNamed(RouteName.favouriteScreen);
-                    },
-                  ),
-                  settingsRow(
-                    text: "Language",
-                    imagePath: Assets.imagesLanguage,
-                    onTap: () {
-                      Get.toNamed(RouteName.languageScreen);
-                    },
-                  ),
-                  settingsRow(
-                    text: "Settings",
-                    imagePath: Assets.imagesSetting,
-                    onTap: () {
-                      Get.toNamed(RouteName.accountSettingScreen);
-                    },
-                  ),
-                  settingsRow(
-                    text: "FAQs",
-                    imagePath: Assets.imagesFaqs,
-                    onTap: () {
-                      Get.toNamed(RouteName.faqsScreen);
-                    },
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: Divider(
-                      color: kBackgroundColor,
+                child: Column(
+                  children: [
+                    CommonImageView(
+                      imagePath: Assets.imagesProfile,
+                      height: 65,
+                      radius: 50,
                     ),
+                    16.verticalSpace,
+                    FreelanceMarketText(
+                      "Kevin Thomas",
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    5.verticalSpace,
+                    FreelanceMarketText(
+                      "kevin.thomas2@gmail.com",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: kTextSecondary2Color,
+                    )
+                  ],
+                ),
+              ),
+              16.verticalSpace,
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(12),
+                decoration: ShapeDecoration(
+                  color: kWhiteColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  settingsRow(
-                    text: "Terms and Conditions",
-                    imagePath: Assets.imagesTremAndCondition,
-                    onTap: () {
-                      Get.toNamed(RouteName.termAndConditionScreen);
-                    },
-                  ),
-                  settingsRow(
-                    text: "Privacy Policy",
-                    imagePath: Assets.imagesPrivacyPolicy,
-                    onTap: () {
-                      Get.toNamed(RouteName.privacyPolicyScreen);
-                    },
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      showCustomDialog();
-                    },
-                    child: Row(
-                      children: [
-                        CommonImageView(
-                          imagePath: Assets.imagesLogout,
-                          height: 35,
-                        ),
-                        12.horizontalSpace,
-                        Expanded(
-                          child: FreelanceMarketText(
-                            "Logout",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
+                  shadows: [
+                    BoxShadow(
+                      color: Color(0x07000000),
+                      blurRadius: 14,
+                      offset: Offset(2, 2),
+                      spreadRadius: 0,
+                    )
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    settingsRow(
+                      text: "Account Settings",
+                      imagePath: Assets.imagesP1,
+                      onTap: () {
+                       Get.toNamed(RouteName.accountSettingScreen);
+                      },
+                    ),
+                    settingsRow(
+                      text: "Edit Profile",
+                      imagePath: Assets.imagesP1,
+                      onTap: () {
+                        Get.toNamed(RouteName.editProfileScreen);
+                      },
+                    ),
+                    settingsRow(
+                      text: "Favorites",
+                      imagePath: Assets.imagesFavourite ,
+                      onTap: () {
+                        Get.toNamed(RouteName.favouriteScreen);
+                      },
+                    ),
+                    settingsRow(
+                      text: "Language",
+                      imagePath: Assets.imagesLanguage,
+                      onTap: () {
+                        Get.toNamed(RouteName.languageScreen);
+                      },
+                    ),
+                    settingsRow(
+                      text: "Settings",
+                      imagePath: Assets.imagesSetting,
+                      onTap: () {
+                        Get.toNamed(RouteName.accountSettingScreen);
+                      },
+                    ),
+                    settingsRow(
+                      text: "FAQs",
+                      imagePath: Assets.imagesFaqs,
+                      onTap: () {
+                        Get.toNamed(RouteName.faqsScreen);
+                      },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Divider(
+                        color: kBackgroundColor,
+                      ),
+                    ),
+                    settingsRow(
+                      text: "Terms and Conditions",
+                      imagePath: Assets.imagesTremAndCondition,
+                      onTap: () {
+                        Get.toNamed(RouteName.termAndConditionScreen);
+                      },
+                    ),
+                    settingsRow(
+                      text: "Privacy Policy",
+                      imagePath: Assets.imagesPrivacyPolicy,
+                      onTap: () {
+                        Get.toNamed(RouteName.privacyPolicyScreen);
+                      },
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        showCustomDialog();
+                      },
+                      child: Row(
+                        children: [
+                          CommonImageView(
+                            imagePath: Assets.imagesLogout,
+                            height: 35,
                           ),
-                        ),
-                      ],
+                          12.horizontalSpace,
+                          Expanded(
+                            child: FreelanceMarketText(
+                              "Logout",
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
 
 
-                ],
-              ),
-            )
-          ],
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

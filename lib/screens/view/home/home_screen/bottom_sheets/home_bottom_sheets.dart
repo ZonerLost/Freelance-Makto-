@@ -48,7 +48,9 @@ class HomeBottomSheet {
               FreelanceMarketTextField(
                   controller: TextEditingController(), hintText: "Additional comments (optional)",maxLines: 5,),
               45.verticalSpace,
-              FreelanceMarketButton(label: "Submit", onPressed: (){},),
+              FreelanceMarketButton(label: "Submit", onPressed: (){
+                Get.back();
+                successBottomSheet();},),
             ],
           ),
         ),
@@ -103,7 +105,10 @@ class HomeBottomSheet {
               FreelanceMarketTextField(
                 controller: TextEditingController(), hintText: "Write your review",maxLines: 5,),
               45.verticalSpace,
-              FreelanceMarketButton(label: "Submit", onPressed: (){},),
+              FreelanceMarketButton(label: "Submit", onPressed: (){
+                Get.back();
+                successBottomSheet();
+              },),
             ],
           ),
         ),

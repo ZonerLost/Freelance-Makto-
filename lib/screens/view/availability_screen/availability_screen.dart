@@ -6,6 +6,7 @@ import 'package:freelance_market/screens/custom/custom_text/custom_text.dart';
 import 'package:get/get.dart';
 
 import '../../../config/constant/colors.dart';
+import '../../../config/routes/routes_names.dart';
 import '../../../controllers/onboarding_process_controller/onboarding_process_controller.dart';
 import '../../custom/custom_button/custom_button.dart';
 import 'time_picke_sheet.dart';
@@ -73,7 +74,9 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
             ),
           ),
 
-          FreelanceMarketButton(label: 'Continue', onPressed: () {}),
+          FreelanceMarketButton(label: 'Continue', onPressed: () {
+            Get.offAllNamed(RouteName.freelanceBottomNavBar);
+          }),
         ],
       ),
     );

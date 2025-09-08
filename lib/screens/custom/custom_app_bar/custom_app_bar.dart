@@ -82,7 +82,7 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
           leading: showBackButton
               ? InkWell(
                   onTap: onBackTap ?? () => Get.back(),
-                  child: CommonImageView(imagePath: Assets.imagesArrowBack,height: 36,),
+                  child: CommonImageView(imagePath: Assets.imagesArrowBack,height: 30,),
                 )
               : null,
           title: title != null

@@ -14,7 +14,7 @@ class FreelanceMarketTextField extends StatelessWidget {
   final bool obscureText;
   final TextInputType keyboardType;
   final int maxLines;
-  final Widget? suffix;
+  final Widget? suffix,prefix;
   final Color borderColor; // 👈 New parameter
 
   const FreelanceMarketTextField({
@@ -27,6 +27,7 @@ class FreelanceMarketTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.maxLines = 1,
     this.suffix,
+    this.prefix,
     this.borderColor = kTextSecondaryColor, // 👈 Default value
   });
 
@@ -49,6 +50,7 @@ class FreelanceMarketTextField extends StatelessWidget {
             ? Icon(suffixIcon, color: kTextSecondaryColor)
             : null,
         suffix: suffix,
+        prefix: prefix,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(color: borderColor),

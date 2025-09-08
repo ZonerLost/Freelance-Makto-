@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_market/screens/custom/common_image_widget/common_image_widget.dart';
 import 'package:freelance_market/screens/custom/custom_app_bar/custom_app_bar.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../config/constant/colors.dart';
+import '../../../config/routes/routes_names.dart';
 import '../../../generated/assets.dart';
 import '../../custom/custom_text/custom_text.dart';
 import '../../custom/custom_text_from_field/custom_text_from_field.dart';
@@ -21,7 +24,11 @@ class JobScreen extends StatelessWidget {
           centertitle: false,
           title: "Jobs",
           actions: [
-            CommonImageView(svgPath: Assets.svgNotification),
+            GestureDetector(
+              onTap: (){
+                Get.toNamed(RouteName.notificationScreen);
+              },
+                child: CommonImageView(svgPath: Assets.svgNotification)),
             12.horizontalSpace,
           ],
         ),
@@ -32,7 +39,7 @@ class JobScreen extends StatelessWidget {
 
   _body() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 20.h),
+      padding: EdgeInsets.symmetric(vertical: 10.h),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -65,9 +72,10 @@ class JobScreen extends StatelessWidget {
             child: TabBarView(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                    vertical: 20.h,
+                  padding: EdgeInsets.only(
+                    left: 20.w,
+                    right: 20.w,
+                    top: 10.h,
                   ),
                   child: Container(
                     decoration: ShapeDecoration(
@@ -198,9 +206,10 @@ class JobScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                    vertical: 20.h,
+                  padding: EdgeInsets.only(
+                    left: 20.w,
+                    right: 20.w,
+                    top: 10.h,
                   ),
                   child: Container(
                       decoration: ShapeDecoration(

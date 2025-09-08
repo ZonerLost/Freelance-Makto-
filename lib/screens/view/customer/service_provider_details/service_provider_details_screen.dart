@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:freelance_market/screens/custom/common_image_widget/common_image_widget.dart';
-import 'package:freelance_market/screens/view/home/job_details_screen/tabs.dart';
 
 import '../../../../config/constant/colors.dart';
 import '../../../../generated/assets.dart';
+import '../../../custom/common_image_widget/common_image_widget.dart';
 import '../../../custom/custom_app_bar/custom_app_bar.dart';
 import '../../../custom/custom_text/custom_text.dart';
+import 'customer_provider_tab_screen.dart';
 
 
 
-class JobDetailsScreen extends StatelessWidget {
-  const JobDetailsScreen({super.key});
+class ServiceProviderDetailsScreen extends StatelessWidget {
+  const ServiceProviderDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar2(
-        title: "Service Details",
-        actions: [
-          CommonImageView(
-            svgPath: Assets.svgVector,
-          ),
-          SizedBox(width: 15,)
-        ],
-      ),
+        appBar: CustomAppBar2(
+          title: "Service Details",
+          actions: [
+            CommonImageView(
+              svgPath: Assets.svgVector,
+            ),
+            SizedBox(width: 15,)
+          ],
+        ),
         body: _body());
   }
 
@@ -55,14 +55,14 @@ class JobDetailsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FreelanceMarketText(
-                        "Edit",
+                        "Chat",
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: kWhiteColor,
                       ),
                       8.horizontalSpace,
                       CommonImageView(
-                        svgPath: Assets.svgPen,
+                        svgPath: Assets.svgChatting,
                       )
                     ],
                   ),
@@ -201,7 +201,8 @@ class JobDetailsScreen extends StatelessWidget {
               ],
             ),
             40.verticalSpace,
-            SelectableTabsRow(),
+            CustomerProviderTabScreen(),
+
 
 
 
